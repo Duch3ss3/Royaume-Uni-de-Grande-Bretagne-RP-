@@ -1,14 +1,63 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Administration — Gouvernement du Royaume-Uni</title><meta name="description" content="Portail gouvernemental RP du Royaume-Uni en 2308"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body><header class="site-header">
-  <div class="crown-line">PORTAIL OFFICIEL DE LA COURONNE ET DU GOUVERNEMENT <span>2308</span></div>
-  <div class="brand-row">
-    <a class="brand" href="index.html"><svg class="flag-logo" viewBox="0 0 60 36" aria-label="Drapeau du Royaume-Uni" role="img"><rect width="60" height="36" fill="#012169"/><path d="M0 0l60 36M60 0L0 36" stroke="#fff" stroke-width="8"/><path d="M0 0l60 36M60 0L0 36" stroke="#c8102e" stroke-width="4"/><path d="M30 0v36M0 18h60" stroke="#fff" stroke-width="12"/><path d="M30 0v36M0 18h60" stroke="#c8102e" stroke-width="7"/></svg><span><strong>Gouvernement du Royaume-Uni</strong><small>Royaume-Uni de Grande-Bretagne</small></span></a>
-    <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Administration — Royaume-Uni</title><link rel="stylesheet" href="style.css"></head><body>
+<header class="site-header">
+  <div class="brandbar">
+    <img class="flag" src="union-jack.svg" alt="Drapeau du Royaume-Uni">
+    <div><div class="brand-title">Royaume-Uni de Grande-Bretagne</div><div class="brand-sub">Portail officiel du Gouvernement</div></div>
   </div>
-  <nav class="main-nav">
-    <a href="index.html">Accueil</a><a href="actualites.html">Actualités</a><a href="institutions.html">Institutions</a><a href="carte.html">Carte du monde</a><a href="journal.html">Journal officiel</a><a class="admin-link" href="admin.html">Administration</a>
-  </nav>
-</header><main><section class="page-header"><p class="kicker">ESPACE DE GESTION</p><h1>Administration du portail</h1><p>Cette première version fonctionne sans modifier le code. Les changements sont enregistrés dans votre navigateur et peuvent être exportés.</p></section><div class="admin-tabs"><button class="active" data-tab="articles">Articles</button><button data-tab="official">Journal officiel</button><button data-tab="territories">Carte diplomatique</button><button data-tab="backup">Sauvegarde</button></div>
-<section id="tab-articles" class="admin-section active"><div class="admin-grid"><form id="article-form" class="admin-form"><h2>Créer un article</h2><label>Titre<input name="title" required></label><label>Catégorie<select name="category"><option>Communiqué</option><option>Discours</option><option>Diplomatie</option><option>Défense</option><option>Économie</option></select></label><label>Date<input name="date" type="date" required></label><label>Résumé<textarea name="summary" rows="5" required></textarea></label><button class="button gold" type="submit">Publier</button></form><div><h2>Articles publiés</h2><div id="admin-articles" class="admin-list"></div></div></div></section>
-<section id="tab-official" class="admin-section"><div class="admin-grid"><form id="official-form" class="admin-form"><h2>Publier un acte</h2><label>Titre<input name="title" required></label><label>Type<select name="type"><option>Loi</option><option>Décret</option><option>Traité</option><option>Nomination</option></select></label><label>Date<input name="date" type="date" required></label><label>Référence<input name="reference" placeholder="Ex. 2308-001" required></label><label>Résumé<textarea name="summary" rows="5" required></textarea></label><button class="button gold" type="submit">Publier</button></form><div><h2>Actes publiés</h2><div id="admin-official" class="admin-list"></div></div></div></section>
-<section id="tab-territories" class="admin-section"><div class="admin-grid"><form id="territory-form" class="admin-form"><h2>Modifier un territoire</h2><label>Identifiant de région<input id="territory-id" name="id" placeholder="Cliquez une région sur la carte puis copiez son identifiant" required></label><label>Nom affiché<input name="displayName"></label><label>Statut<select name="status"><option value="unassigned">Non attribué</option><option value="royaume">Royaume</option><option value="allie">Allié</option><option value="neutre">Neutre</option><option value="hostile">Hostile</option><option value="revendique">Revendiqué</option></select></label><label>Note diplomatique<textarea name="note" rows="5"></textarea></label><button class="button gold" type="submit">Enregistrer</button></form><div class="paper-panel"><h2>Mode d’emploi</h2><p>Ouvrez la carte dans un autre onglet, cliquez sur une région et relevez son identifiant. Saisissez-le ici, choisissez un statut puis enregistrez.</p><p>Les modifications seront visibles immédiatement sur ce navigateur.</p></div></div></section>
-<section id="tab-backup" class="admin-section"><div class="paper-panel"><h2>Sauvegarder ou transférer les données</h2><p>Exportez toutes vos publications et vos statuts territoriaux dans un fichier JSON. Vous pourrez ensuite le réimporter sur un autre ordinateur.</p><div class="hero-actions"><button id="export-data" class="button gold">Exporter les données</button><label class="button outline file-button">Importer un fichier<input id="import-data" type="file" accept="application/json"></label><button id="reset-data" class="button danger">Tout effacer</button></div><p id="admin-message" class="admin-message" aria-live="polite"></p></div></section></main><footer class="site-footer"><div><strong>Gouvernement du Royaume-Uni</strong><p>Portail fictif destiné à un jeu de rôle géopolitique.</p></div><div><p>Année institutionnelle : 2308</p><p>Accès public · Archives de la Couronne</p></div></footer><script src="main.js"></script><script src="admin.js"></script></body></html>
+  <nav class="navbar"><div class="navinner">
+    <a href="index.html">Accueil</a>
+    <a href="gouvernement.html">Gouvernement</a>
+    <a href="journal-officiel.html">Journal officiel</a>
+    <a href="diplomatie.html">Diplomatie</a>
+    <a href="economie.html">Économie</a>
+    <a href="admin.html">Administration</a>
+  </div></nav>
+</header>
+<main>
+<section class="hero"><p class="kicker">Espace de gestion</p><h1>Administration</h1><div class="gold-rule"></div><p>Gérez les données visibles sur le portail sans modifier directement le code.</p></section>
+<div class="notice"><strong>Version locale :</strong> les changements sont enregistrés dans ce navigateur. Utilisez « Exporter les données » pour créer une sauvegarde. La publication automatique pour tous les visiteurs sera ajoutée lors de la connexion à GitHub.</div>
+<div class="admin-layout">
+<aside class="admin-nav">
+<button class="active" data-tab="economy">Économie</button>
+<button data-tab="journal">Journal officiel</button>
+<button data-tab="government">Gouvernement</button>
+<button data-tab="diplomacy">Diplomatie</button>
+<button data-tab="settings">Paramètres</button>
+</aside>
+<section>
+<div class="admin-panel tab" id="tab-economy">
+<h2>Ajouter un partenaire économique</h2>
+<div class="form-grid">
+<div><label for="eco-name">Nom du pays</label><input id="eco-name"></div>
+<div><label for="eco-flag">Drapeau</label><input id="eco-flag" placeholder="Emoji 🇫🇷 ou adresse d’image"></div>
+<div><label for="eco-relation">Relation</label><select id="eco-relation"><option>Excellente</option><option>Allié</option><option>Normale</option><option>Tendue</option><option>Hostile</option></select></div>
+<div><label for="eco-import">Taxe d’importation (%)</label><input id="eco-import" type="number" min="0" step="0.1"></div>
+<div><label for="eco-export">Taxe d’exportation (%)</label><input id="eco-export" type="number" min="0" step="0.1"></div>
+<div><label for="eco-notes">Notes</label><input id="eco-notes"></div>
+</div>
+<div class="actions"><button class="btn" id="save-economy">Enregistrer</button><button class="btn secondary" id="clear-economy">Vider le formulaire</button></div>
+<h2>Partenaires enregistrés</h2><div id="admin-economy-list" class="article-list"></div>
+</div>
+<div class="admin-panel tab" id="tab-journal" hidden>
+<h2>Nouvelle publication officielle</h2>
+<div class="form-grid">
+<div><label>Type</label><select id="pub-type"><option>Loi</option><option>Décret</option><option>Traité</option><option>Communiqué</option><option>Discours</option><option>Nomination</option></select></div>
+<div><label>Date</label><input id="pub-date" type="date"></div>
+<div style="grid-column:1/-1"><label>Titre</label><input id="pub-title"></div>
+<div style="grid-column:1/-1"><label>Résumé</label><textarea id="pub-summary"></textarea></div>
+</div><div class="actions"><button class="btn" id="save-publication">Publier</button></div>
+<div id="admin-publication-list" class="article-list"></div>
+</div>
+<div class="admin-panel tab" id="tab-government" hidden><h2>Gouvernement</h2><p>Cette section sera rendue modifiable lors de l’étape Gouvernement.</p></div>
+<div class="admin-panel tab" id="tab-diplomacy" hidden><h2>Diplomatie</h2><p>Cette section sera reliée à la carte et aux relations internationales.</p></div>
+<div class="admin-panel tab" id="tab-settings" hidden>
+<h2>Sauvegarde des données</h2><div class="actions"><button class="btn" id="export-data">Exporter les données</button><label class="btn secondary">Importer un fichier<input id="import-data" type="file" accept=".json" hidden></label><button class="btn secondary" id="reset-data">Réinitialiser</button></div>
+</div>
+</section></div>
+</main>
+<footer class="site-footer"><div class="footer-inner">
+<div><strong>Royaume-Uni de Grande-Bretagne</strong><p>Site fictif destiné à un jeu de rôle géopolitique.</p></div>
+<div><p>Gouvernement de Sa Majesté • 2308</p></div>
+</div></footer><script src="main.js"></script>
+<script src="data.js"></script><script src="admin.js"></script></body></html>

@@ -1,99 +1,37 @@
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Portail gouvernemental du Royaume-Uni en 2308">
-  <title>Accueil · Royaume-Uni de Grande-Bretagne</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="responsive.css">
-</head>
-<body>
-  <div class="utility">
-    <div>PORTAIL OFFICIEL · ANNÉE 2308</div>
-    <div><span>English</span><span>Accessibilité</span><span>Recherche</span></div>
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Accueil — Royaume-Uni</title><link rel="stylesheet" href="style.css"></head><body>
+<header class="site-header">
+  <div class="brandbar">
+    <img class="flag" src="union-jack.svg" alt="Drapeau du Royaume-Uni">
+    <div><div class="brand-title">Royaume-Uni de Grande-Bretagne</div><div class="brand-sub">Portail officiel du Gouvernement</div></div>
   </div>
-
-  <header class="site-header">
-    <a href="index.html" class="brand">
-      <img src="union-jack.svg" alt="Drapeau du Royaume-Uni">
-      <div><strong>Royaume-Uni de Grande-Bretagne</strong></div>
-    </a>
-    <button class="menu-button" aria-label="Ouvrir le menu">Menu</button>
-    <nav>
-      <a class="active" href="index.html">Accueil</a>
-      <a href="actualites.html">Actualités</a>
-      <a href="gouvernement.html">Gouvernement</a>
-      <a href="institutions.html">Institutions</a>
-      <a href="diplomatie.html">Diplomatie</a>
-      <a href="journal-officiel.html">Journal officiel</a>
-      <a href="archives.html">Archives</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="royal-divider home-divider"><span></span><b>✦</b><span></span></section>
-
-    <section class="intro-grid illustrated-grid" aria-label="Accès principaux">
-      <article>
-        <img class="section-illustration" src="icon-crown.svg" alt="Illustration de la Couronne">
-        <small>01</small>
-        <h2>La Couronne</h2>
-        <p>Symbole de permanence, d’unité et d’autorité constitutionnelle.</p>
-        <a href="institutions.html">En savoir plus</a>
-      </article>
-      <article>
-        <img class="section-illustration" src="icon-government.svg" alt="Illustration de Whitehall">
-        <small>02</small>
-        <h2>Le Gouvernement</h2>
-        <p>Direction politique du Royaume et coordination des ministères.</p>
-        <a href="gouvernement.html">Voir le Gouvernement</a>
-      </article>
-      <article>
-        <img class="section-illustration" src="icon-parliament.svg" alt="Illustration du Parlement">
-        <small>03</small>
-        <h2>Le Parlement</h2>
-        <p>Débat public, contrôle de l’exécutif et production de la loi.</p>
-        <a href="institutions.html">Consulter les chambres</a>
-      </article>
-      <article>
-        <img class="section-illustration" src="icon-diplomacy.svg" alt="Illustration de la diplomatie">
-        <small>04</small>
-        <h2>La Diplomatie</h2>
-        <p>Défense des intérêts britanniques et relations avec le monde.</p>
-        <a href="diplomatie.html">Relations extérieures</a>
-      </article>
-    </section>
-
-    <section class="section publications-section">
-      <div class="section-title">
-        <div><p class="eyebrow">COMMUNIQUÉS</p><h1>Dernières publications</h1></div>
-        <a href="actualites.html">Toutes les actualités →</a>
-      </div>
-      <div id="latest-news" class="news-grid"></div>
-      <p class="admin-ready-note">Cette rubrique est déjà alimentée par le fichier de données des actualités et sera modifiable depuis le panneau d’administration de la version 2.1.</p>
-    </section>
-
-    <section class="government-entry">
-      <div>
-        <p class="eyebrow">WHITEHALL</p>
-        <h2>Le Gouvernement de Sa Majesté</h2>
-        <p>Consultez la liste du Premier ministre, du Cabinet et des ministères du Royaume.</p>
-      </div>
-      <a class="government-link" href="gouvernement.html">Accéder au Gouvernement →</a>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-grid">
-      <div><img src="union-jack.svg" alt=""><h3>Royaume-Uni de Grande-Bretagne</h3><p>Portail officiel fictif d’un jeu de rôle géopolitique situé en 2308.</p></div>
-      <div><h4>Institutions</h4><a href="gouvernement.html">Le Gouvernement</a><a href="institutions.html">La Couronne et le Parlement</a><a href="journal-officiel.html">Journal officiel</a></div>
-      <div><h4>Relations extérieures</h4><a href="diplomatie.html">Diplomatie</a><a href="archives.html">Archives</a><a href="actualites.html">Communiqués</a></div>
-    </div>
-    <div class="footer-bottom">© 2308 · Royaume-Uni de Grande-Bretagne · Site RP non officiel</div>
-  </footer>
-  <script src="news-data.js"></script>
-  <script src="official-data.js"></script>
-  <script src="main.js"></script>
-</body>
-</html>
+  <nav class="navbar"><div class="navinner">
+    <a href="index.html">Accueil</a>
+    <a href="gouvernement.html">Gouvernement</a>
+    <a href="journal-officiel.html">Journal officiel</a>
+    <a href="diplomatie.html">Diplomatie</a>
+    <a href="economie.html">Économie</a>
+    <a href="admin.html">Administration</a>
+  </div></nav>
+</header>
+<main>
+<section class="hero">
+<p class="kicker">Gouvernement de Sa Majesté</p><h1>Royaume-Uni de Grande-Bretagne</h1><div class="gold-rule"></div>
+<p>Bienvenue sur le portail officiel du Royaume. Consultez les décisions publiques, la composition du Gouvernement, les relations diplomatiques et les politiques commerciales.</p>
+</section>
+<section class="section"><div class="section-head"><p class="kicker">Accès officiels</p><h2>Les services du Royaume</h2></div>
+<div class="grid grid-4">
+<a class="card" href="gouvernement.html"><h3>Le Gouvernement</h3><p>La Couronne, le Premier ministre, le Cabinet et les ministères.</p></a>
+<a class="card" href="journal-officiel.html"><h3>Journal officiel</h3><p>Lois, décrets, nominations, traités et communiqués.</p></a>
+<a class="card" href="diplomatie.html"><h3>Diplomatie</h3><p>Relations internationales, alliances et organisations.</p></a>
+<a class="card" href="economie.html"><h3>Économie</h3><p>Partenaires commerciaux et régimes douaniers.</p></a>
+</div></section>
+<section class="section"><div class="section-head"><p class="kicker">Publications</p><h2>Dernières décisions officielles</h2></div>
+<div id="home-publications" class="grid grid-3"></div></section>
+<section class="cta"><h2>Découvrir les membres du Gouvernement</h2><p>Consultez la composition du Cabinet et les responsabilités ministérielles.</p><a class="btn" href="gouvernement.html">Voir le Gouvernement</a></section>
+</main>
+<footer class="site-footer"><div class="footer-inner">
+<div><strong>Royaume-Uni de Grande-Bretagne</strong><p>Site fictif destiné à un jeu de rôle géopolitique.</p></div>
+<div><p>Gouvernement de Sa Majesté • 2308</p></div>
+</div></footer><script src="main.js"></script>
+<script src="data.js"></script><script src="journal.js"></script></body></html>

@@ -1,5 +1,14 @@
-# Portail du Royaume-Uni de Grande-Bretagne — v2.0.3
+# Royaume-Uni RP — Version 2.1
+Fichiers entièrement à plat pour GitHub Pages.
 
-Cette version finalise la page Actualités : mise en avant, recherche, catégories, cartes illustrées et pages de lecture.
+Pages conservées :
+- Accueil
+- Gouvernement
+- Journal officiel
+- Diplomatie
+- Économie
+- Administration
 
-Les publications sont centralisées dans `news-data.js`. Le futur panneau d'administration modifiera ces mêmes données automatiquement : l'utilisateur n'aura pas à toucher au code.
+Les anciennes pages Actualités, Institutions et Archives ne sont plus utilisées.
+
+Important : l'administration actuelle utilise localStorage. Les changements sont visibles dans le même navigateur uniquement. Exportez régulièrement les données en JSON. Une connexion à GitHub/Decap CMS sera nécessaire pour rendre automatiquement les changements publics pour tous les visiteurs.
