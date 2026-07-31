@@ -1,7 +1,7 @@
 :root{
   --navy:#071a33; --navy2:#102a4b; --gold:#b6903f; --ivory:#f5f0e6;
   --paper:#fffdf8; --ink:#1a2533; --muted:#657080; --line:#d9cfbb;
-  --green:#287a55; --amber:#ad741d; --red:#9f3030;
+  --green:#287a55; --amber:#ad741d; --red:#9f3030; --blue:#315f94;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -9,20 +9,20 @@ body{margin:0;background:var(--ivory);color:var(--ink);font-family:Georgia,"Time
 a{color:inherit;text-decoration:none}
 button,input,select,textarea{font:inherit}
 .site-header{background:var(--paper);border-top:4px solid var(--gold)}
-.brandbar{max-width:1180px;margin:auto;padding:22px 24px;display:flex;align-items:center;gap:18px}
+.brandbar{max-width:1220px;margin:auto;padding:22px 24px;display:flex;align-items:center;gap:18px}
 .flag{width:72px;height:44px;object-fit:cover;border:1px solid #c7bfae}
 .brand-title{font-size:clamp(1.35rem,3vw,2.25rem);letter-spacing:.02em;color:var(--navy)}
 .brand-sub{font-size:.82rem;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);margin-top:5px}
 .navbar{background:var(--navy);border-bottom:3px solid var(--gold)}
-.navinner{max-width:1180px;margin:auto;padding:0 24px;display:flex;justify-content:center;align-items:center;gap:4px}
-.navinner a{padding:17px 18px;color:#fff;font-size:1.05rem;letter-spacing:.035em;border-bottom:3px solid transparent}
+.navinner{max-width:1220px;margin:auto;padding:0 24px;display:flex;justify-content:center;align-items:center;gap:4px}
+.navinner a{padding:17px 18px;color:#fff;font-size:1.03rem;letter-spacing:.035em;border-bottom:3px solid transparent}
 .navinner a:hover,.navinner a.active{background:rgba(255,255,255,.06);border-bottom-color:var(--gold);color:#f4d993}
-main{max-width:1180px;margin:auto;padding:52px 24px}
-.hero{text-align:center;padding:58px 24px 62px}
+main{max-width:1220px;margin:auto;padding:52px 24px}
+.hero{text-align:center;padding:48px 24px 58px}
 .kicker{text-transform:uppercase;letter-spacing:.18em;color:var(--gold);font-size:.78rem}
 h1,h2,h3{color:var(--navy);font-weight:normal}
 h1{font-size:clamp(2.5rem,6vw,5rem);line-height:1.03;margin:15px 0}
-.hero p{max-width:790px;margin:0 auto;color:var(--muted);font-size:1.18rem;line-height:1.75}
+.hero p{max-width:800px;margin:0 auto;color:var(--muted);font-size:1.16rem;line-height:1.75}
 .gold-rule{width:90px;height:2px;background:var(--gold);margin:28px auto}
 .grid{display:grid;gap:22px}
 .grid-3{grid-template-columns:repeat(3,1fr)}
@@ -39,15 +39,16 @@ h1{font-size:clamp(2.5rem,6vw,5rem);line-height:1.03;margin:15px 0}
 .btn{display:inline-block;border:1px solid var(--gold);padding:12px 20px;background:var(--gold);color:#111;font-weight:bold;cursor:pointer}
 .btn.secondary{background:transparent;color:var(--navy)}
 .table-wrap{overflow:auto;background:var(--paper);border:1px solid var(--line)}
-table{width:100%;border-collapse:collapse;min-width:780px}
+table{width:100%;border-collapse:collapse;min-width:820px}
 th,td{padding:15px;text-align:left;border-bottom:1px solid var(--line)}
 th{background:var(--navy);color:white;font-weight:normal}
 .country-flag{width:46px;height:30px;object-fit:cover;border:1px solid #bbb;vertical-align:middle;margin-right:10px}
 .status{display:inline-block;padding:5px 10px;border-radius:30px;font-size:.86rem}
 .status.excellente,.status.allie{background:#dfeee6;color:var(--green)}
-.status.normale{background:#eee9da;color:#6a5b2c}
-.status.tendue{background:#faead1;color:var(--amber)}
-.status.hostile{background:#f3dddd;color:var(--red)}
+.status.normale,.status.neutre{background:#eee9da;color:#6a5b2c}
+.status.tendue,.status.revendique{background:#faead1;color:var(--amber)}
+.status.hostile,.status.ennemi{background:#f3dddd;color:var(--red)}
+.status.national{background:#dbe9f7;color:var(--blue)}
 .toolbar{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0}
 .toolbar input,.toolbar select{padding:11px 13px;border:1px solid var(--line);background:white}
 .empty{text-align:center;color:var(--muted);padding:45px}
@@ -61,13 +62,12 @@ label{display:block;color:var(--navy);margin-bottom:6px}
 input,select,textarea{width:100%;padding:11px;border:1px solid #cfc5b3;background:#fff}
 textarea{min-height:110px}
 .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
-.small{font-size:.88rem;color:var(--muted)}
 .notice{background:#fff5d8;border-left:4px solid var(--gold);padding:16px;margin-bottom:20px}
 .article-list{display:grid;gap:14px}
 .article-item{border:1px solid var(--line);padding:18px;background:white}
 .article-item h3{margin:0 0 8px}
 .site-footer{background:#061428;color:#dbe3ec;margin-top:70px;border-top:3px solid var(--gold)}
-.footer-inner{max-width:1180px;margin:auto;padding:38px 24px;display:flex;justify-content:space-between;gap:20px}
+.footer-inner{max-width:1220px;margin:auto;padding:38px 24px;display:flex;justify-content:space-between;gap:20px}
 
 /* Gouvernement */
 .leadership-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
@@ -86,20 +86,43 @@ textarea{min-height:110px}
 .minister-body p{color:var(--muted);line-height:1.55}
 .placeholder-photo{display:grid;place-items:center;color:var(--navy);font-size:4rem;background:linear-gradient(135deg,#eee6d8,#d8ccb8)}
 
-.preview-image{width:120px;height:150px;object-fit:cover;border:1px solid var(--line);background:#eee}
+/* Carte */
+.map-shell{display:grid;grid-template-columns:1fr 330px;border:1px solid var(--line);background:#07111f;min-height:620px}
+.map-area{position:relative;overflow:hidden;min-height:620px}
+#world-map{width:100%;height:100%;min-height:620px;display:block;background:#07111f}
+.country{fill:#273446;stroke:#8b96a3;stroke-width:.35;cursor:pointer;transition:fill .15s}
+.country:hover{stroke:#fff;stroke-width:1.1}
+.map-tools{position:absolute;top:15px;left:15px;z-index:4;display:flex;gap:8px;flex-wrap:wrap}
+.map-tools input{width:260px;background:rgba(255,255,255,.96)}
+.map-tools button{padding:10px 13px;border:1px solid var(--gold);background:var(--navy);color:white;cursor:pointer}
+.map-status{position:absolute;bottom:12px;left:15px;color:#dbe3ec;background:rgba(4,12,23,.8);padding:7px 10px;font-size:.84rem}
+.map-panel{background:var(--paper);padding:26px;border-left:3px solid var(--gold)}
+.map-panel h2{font-size:2rem;margin:8px 0 18px}
+.map-flag{font-size:2.5rem}
+.detail-list{display:grid;gap:14px}
+.detail-row{border-bottom:1px solid var(--line);padding-bottom:12px}
+.detail-row strong{display:block;color:var(--gold);font-size:.76rem;letter-spacing:.13em;text-transform:uppercase;margin-bottom:5px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin:18px 0}
+.legend span{display:flex;align-items:center;gap:7px;font-size:.9rem}
+.dot{width:13px;height:13px;border-radius:50%}
+.dot.national{background:#315f94}.dot.allie{background:#287a55}.dot.neutre{background:#7b7f86}.dot.revendique{background:#b6903f}.dot.hostile{background:#9f3030}
+.territory-select{width:100%}
 .admin-person{display:grid;grid-template-columns:90px 1fr auto;gap:16px;align-items:center}
 .admin-person img{width:90px;height:110px;object-fit:cover;background:#eee}
-@media(max-width:900px){
- .grid-3,.grid-4,.form-grid,.admin-layout,.leadership-grid,.minister-grid{grid-template-columns:1fr}
+@media(max-width:950px){
+ .grid-3,.grid-4,.form-grid,.admin-layout,.leadership-grid,.minister-grid,.map-shell{grid-template-columns:1fr}
  .leader-card{grid-template-columns:1fr}
  .leader-photo{height:340px}
+ .map-panel{border-left:0;border-top:3px solid var(--gold)}
  .footer-inner{flex-direction:column}
  .navinner{justify-content:flex-start;overflow-x:auto}
  .navinner a{white-space:nowrap}
 }
 @media(max-width:600px){
- main{padding:34px 16px}
+ main{padding:34px 14px}
  .brandbar{padding:18px 16px}
+ .map-tools{right:12px}
+ .map-tools input{width:100%}
  .admin-person{grid-template-columns:70px 1fr}
  .admin-person .actions{grid-column:1/-1}
 }

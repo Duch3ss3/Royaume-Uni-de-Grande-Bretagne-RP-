@@ -1,4 +1,4 @@
-const DEFAULT_DATA={economy:[],publications:[],government:[],diplomacy:[]};
+const DEFAULT_DATA={territories:[],publications:[],government:[]};
 function getData(){try{return {...DEFAULT_DATA,...JSON.parse(localStorage.getItem('uk2308_data')||'{}')}}catch(e){return structuredClone(DEFAULT_DATA)}}
 function setData(d){localStorage.setItem('uk2308_data',JSON.stringify(d))}
 function esc(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
@@ -11,3 +11,5 @@ function personImage(person,cls){
  if(person.image) return `<img class="${cls}" src="${esc(person.image)}" alt="Portrait de ${esc(person.name)}">`;
  return `<div class="${cls} placeholder-photo">♛</div>`;
 }
+function lines(value){return String(value||'').split(/\n+/).map(x=>x.trim()).filter(Boolean)}
+function territoryByAtlas(id){return (getData().territories||[]).find(t=>String(t.atlasId)===String(id))}

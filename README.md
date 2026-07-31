@@ -1,12 +1,12 @@
-# Royaume-Uni RP — Gouvernement administrable
+# Royaume-Uni RP — Version 2.2 Carte et territoires
 
-Tous les fichiers sont à la racine pour faciliter l'envoi sur GitHub.
+Tous les fichiers sont à la racine.
 
-Dans Administration > Gouvernement, vous pouvez :
-- ajouter le Roi ;
-- ajouter la Première ministre ;
-- ajouter plusieurs ministres ;
-- modifier ou supprimer un profil ;
-- utiliser une adresse d'image ou importer une petite image.
+Une seule fiche territoire alimente :
+- la carte ;
+- la page Diplomatie ;
+- la page Économie.
 
-Attention : les données sont enregistrées dans le navigateur utilisé. Elles ne deviennent pas encore publiques pour les autres visiteurs. Utilisez l'export JSON pour sauvegarder. Une connexion à GitHub ou à un CMS sera nécessaire pour la publication publique automatique.
+La carte utilise World Atlas pour les frontières nationales. Cette première version ne contient pas encore toutes les subdivisions administratives de Projet Résurgence.
+
+L'administration utilise le stockage local du navigateur. Exportez régulièrement vos données. Pour rendre les changements publics à tous les visiteurs, il faudra ensuite connecter le panneau à GitHub ou à un CMS.

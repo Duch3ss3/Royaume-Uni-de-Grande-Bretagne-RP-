@@ -9,16 +9,18 @@
     <a href="gouvernement.html">Gouvernement</a>
     <a href="journal-officiel.html">Journal officiel</a>
     <a href="diplomatie.html">Diplomatie</a>
+    <a href="carte.html">Carte</a>
     <a href="economie.html">Économie</a>
     <a href="admin.html">Administration</a>
   </div></nav>
 </header>
 <main>
-<section class="hero"><p class="kicker">Affaires étrangères</p><h1>Diplomatie</h1><div class="gold-rule"></div><p>Alliances, organisations internationales, revendications et relations extérieures du Royaume.</p></section>
-<div class="grid grid-3"><article class="card"><h3>Alliances</h3><p>Accords défensifs, politiques et stratégiques.</p></article><article class="card"><h3>Organisations</h3><p>Participation britannique aux structures internationales.</p></article><article class="card"><h3>Revendications</h3><p>Positions territoriales et zones d’intérêt national.</p></article></div>
+<section class="hero"><p class="kicker">Affaires étrangères</p><h1>Diplomatie</h1><div class="gold-rule"></div><p>Les relations diplomatiques utilisent les mêmes fiches que la carte et la page Économie.</p></section>
+<div class="toolbar"><input id="diplo-search" placeholder="Rechercher un territoire"><select id="diplo-filter"><option value="all">Tous les statuts</option><option value="national">National</option><option value="allie">Allié</option><option value="neutre">Neutre</option><option value="revendique">Revendiqué</option><option value="hostile">Hostile</option></select></div>
+<div id="diplomacy-list" class="grid grid-3"></div>
 </main>
 <footer class="site-footer"><div class="footer-inner">
 <div><strong>Royaume-Uni de Grande-Bretagne</strong><p>Site fictif destiné à un jeu de rôle géopolitique.</p></div>
 <div><p>Gouvernement de Sa Majesté • 2308</p></div>
 </div></footer><script src="main.js"></script>
-</body></html>
+<script src="data.js"></script><script src="diplomacy.js"></script></body></html>
