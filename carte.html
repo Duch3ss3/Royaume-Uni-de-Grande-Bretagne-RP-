@@ -1,4 +1,4 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Carte — Royaume-Uni</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"></head><body>
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Carte — Royaume-Uni</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css"></head><body>
 <header class="site-header">
   <div class="brandbar">
     <img class="flag" src="union-jack.svg" alt="Drapeau du Royaume-Uni">
@@ -19,7 +19,7 @@
   <p class="kicker">Centre de situation diplomatique</p>
   <h1>Carte territoriale mondiale</h1>
   <div class="gold-rule"></div>
-  <p>La carte utilise un niveau de détail intermédiaire : les grands États sont divisés en régions stratégiques, tandis que les pays plus petits restent entiers.</p>
+  <p>La carte repose sur MapLibre GL JS : les grands États sont divisés en régions stratégiques, tandis que les pays plus petits restent entiers.</p>
 </section>
 
 <div class="legend">
@@ -37,7 +37,7 @@
       <button id="map-search-btn">Rechercher</button>
       <button id="map-reset">Vue mondiale</button>
     </div>
-    <div id="leaflet-map" aria-label="Carte territoriale mondiale interactive"></div>
+    <div id="maplibre-map" aria-label="Carte territoriale mondiale interactive"></div>
     <div id="map-status" class="map-status">Chargement de la carte hybride…</div>
   </div>
   <aside id="map-info" class="map-panel">
@@ -51,4 +51,4 @@
 <div><strong>Royaume-Uni de Grande-Bretagne</strong><p>Site fictif destiné à un jeu de rôle géopolitique.</p></div>
 <div><p>Gouvernement de Sa Majesté • 2308</p></div>
 </div></footer><script src="main.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script><script src="data.js"></script><script src="map.js"></script></body></html>
+<script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script><script src="data.js"></script><script src="map.js"></script></body></html>

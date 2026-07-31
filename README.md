@@ -1,16 +1,20 @@
-# Royaume-Uni RP — Version 2.4 Carte hybride
+# Royaume-Uni RP — Version 2.5 MapLibre
 
-Cette version adopte un niveau de détail intermédiaire.
+La carte utilise désormais MapLibre GL JS.
 
-Pays détaillés en subdivisions régionales :
-États-Unis, Canada, Mexique, Brésil, Argentine, Russie, Chine, Inde, Australie,
-Indonésie, Allemagne, France, Espagne, Italie, Royaume-Uni, Turquie, Iran,
-Arabie saoudite, Afrique du Sud, Nigeria, RDC, Éthiopie, Pakistan et Japon.
+Fonctionnalités :
+- rendu WebGL fluide ;
+- frontières nettes pendant le zoom ;
+- survol des territoires ;
+- recherche ;
+- panneau diplomatique ;
+- carte hybride : grands États subdivisés, petits pays entiers ;
+- base unique utilisée par la carte, la diplomatie et l'économie.
 
-Les autres pays restent représentés par une seule frontière nationale.
+Sources externes :
+- MapLibre GL JS 5.24.0 ;
+- fond raster CARTO/OpenStreetMap ;
+- frontières Natural Earth via des services ArcGIS publics.
 
-Une même fiche territoriale alimente la carte, la diplomatie et l'économie.
-Le panneau d'administration permet de regrouper plusieurs régions dans une même entité RP.
-
-La carte nécessite une connexion Internet. Les modifications du panneau restent locales
-au navigateur jusqu'à la future connexion GitHub/CMS.
+Une connexion Internet est nécessaire pour la carte.
+Les données administratives sont encore enregistrées localement dans le navigateur.
