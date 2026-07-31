@@ -1,16 +1,16 @@
-# Royaume-Uni RP — Version 2.3 Carte détaillée Admin-1
+# Royaume-Uni RP — Version 2.4 Carte hybride
 
-Cette version affiche des subdivisions administratives mondiales de premier niveau :
-États, provinces, régions, Länder, oblasts, communautés autonomes, etc.
+Cette version adopte un niveau de détail intermédiaire.
 
-Une fiche territoriale peut regrouper plusieurs subdivisions. La même fiche alimente :
-- la carte ;
-- la page Diplomatie ;
-- la page Économie.
+Pays détaillés en subdivisions régionales :
+États-Unis, Canada, Mexique, Brésil, Argentine, Russie, Chine, Inde, Australie,
+Indonésie, Allemagne, France, Espagne, Italie, Royaume-Uni, Turquie, Iran,
+Arabie saoudite, Afrique du Sud, Nigeria, RDC, Éthiopie, Pakistan et Japon.
 
-La carte charge les géométries publiques Natural Earth depuis un service ArcGIS et utilise
-un fond cartographique CARTO/OpenStreetMap. Une connexion Internet est nécessaire.
+Les autres pays restent représentés par une seule frontière nationale.
 
-Important : l'administration stocke encore les données dans le navigateur local.
-Exportez régulièrement vos données JSON. Une connexion GitHub/CMS sera nécessaire pour
-que les modifications deviennent publiques pour tous les visiteurs.
+Une même fiche territoriale alimente la carte, la diplomatie et l'économie.
+Le panneau d'administration permet de regrouper plusieurs régions dans une même entité RP.
+
+La carte nécessite une connexion Internet. Les modifications du panneau restent locales
+au navigateur jusqu'à la future connexion GitHub/CMS.

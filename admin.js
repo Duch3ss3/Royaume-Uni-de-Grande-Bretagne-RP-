@@ -6,68 +6,77 @@ document.querySelectorAll('.admin-nav button').forEach(btn=>btn.addEventListener
  document.getElementById('tab-'+btn.dataset.tab).hidden=false;
 }));
 
-const ARC_LAYER='https://gisserver.habitat.org/arcgis/rest/services/WorldStatesAndProvinces/MapServer/0';
+
+const COUNTRY_LAYER='https://gisserver.habitat.org/arcgis/rest/services/World_Countries/FeatureServer/0';
+const ADMIN1_LAYER='https://gisserver.habitat.org/arcgis/rest/services/WorldStatesAndProvinces/MapServer/0';
+const DETAILED_COUNTRIES=new Set([
+ 'United States of America','United States','Canada','Mexico','Brazil','Argentina',
+ 'Russian Federation','Russia','China','India','Australia','Indonesia',
+ 'Germany','France','Spain','Italy','United Kingdom','Türkiye','Turkey',
+ 'Iran (Islamic Republic of)','Iran','Saudi Arabia','South Africa','Nigeria',
+ 'Democratic Republic of the Congo','Ethiopia','Pakistan','Japan'
+]);
 let allRegions=[];
 let selectedRegionIds=new Set();
 let activeCountry='';
 
-async function fetchJson(url){
- const r=await fetch(url);if(!r.ok)throw new Error('HTTP '+r.status);return r.json();
+async function fetchJson(url){const r=await fetch(url);if(!r.ok)throw new Error('HTTP '+r.status);return r.json()}
+async function queryAttributes(layerUrl,outFields){
+ const ids=await fetchJson(`${layerUrl}/query?where=1%3D1&returnIdsOnly=true&f=json`);
+ const result=[];
+ for(let i=0;i<(ids.objectIds||[]).length;i+=900){
+   const params=new URLSearchParams({objectIds:ids.objectIds.slice(i,i+900).join(','),outFields,returnGeometry:'false',f:'json'});
+   const data=await fetchJson(`${layerUrl}/query?${params}`);
+   result.push(...(data.features||[]));
+ }
+ return result;
 }
 async function loadRegionMetadata(){
  const results=document.getElementById('region-results');
  try{
-   const idsData=await fetchJson(`${ARC_LAYER}/query?where=1%3D1&returnIdsOnly=true&f=json`);
-   const ids=idsData.objectIds||[];
-   for(let i=0;i<ids.length;i+=700){
-     const params=new URLSearchParams({
-       objectIds:ids.slice(i,i+700).join(','),
-       outFields:'FID,adm1_code,iso_3166_2,name,name_fr,name_en,admin,type_en',
-       returnGeometry:'false',f:'json'
+   const countries=await queryAttributes(COUNTRY_LAYER,'*');
+   countries.forEach((f,index)=>{
+     const p=f.attributes||f.properties||{};
+     const name=p.COUNTRY||p.CNTRY_NAME||p.NAME||p.ADMIN||`Pays ${index}`;
+     if(!DETAILED_COUNTRIES.has(name)){
+       allRegions.push({id:`country:${name}`,name,country:name,type:'État entier',code:''});
+     }
+   });
+   results.innerHTML='<div class="empty">Chargement des régions stratégiques…</div>';
+   const admin1=await queryAttributes(ADMIN1_LAYER,'FID,adm1_code,iso_3166_2,name,name_fr,name_en,admin,type_en');
+   admin1.forEach(f=>{
+     const p=f.attributes||f.properties||{};
+     const country=p.admin||'';
+     if(!DETAILED_COUNTRIES.has(country))return;
+     allRegions.push({
+       id:`admin1:${p.FID}`,name:p.name_fr||p.name||p.name_en||`Région ${p.FID}`,
+       country,type:p.type_en||'Subdivision',code:p.iso_3166_2||p.adm1_code||''
      });
-     const data=await fetchJson(`${ARC_LAYER}/query?${params.toString()}`);
-     (data.features||[]).forEach(f=>{
-       const p=f.attributes||{};
-       allRegions.push({
-         id:String(p.FID),name:p.name_fr||p.name||p.name_en||`Région ${p.FID}`,
-         country:p.admin||'Pays non renseigné',type:p.type_en||'Subdivision',
-         code:p.iso_3166_2||p.adm1_code||''
-       });
-     });
-     results.innerHTML=`<div class="empty">${allRegions.length.toLocaleString('fr-FR')} subdivisions chargées…</div>`;
-   }
+   });
    allRegions.sort((a,b)=>a.country.localeCompare(b.country,'fr')||a.name.localeCompare(b.name,'fr'));
    renderCountries();renderRegionResults();
  }catch(e){
-   console.error(e);results.innerHTML='<div class="empty">Impossible de charger les subdivisions.</div>';
+   console.error(e);results.innerHTML='<div class="empty">Impossible de charger la liste territoriale.</div>';
  }
 }
 function renderCountries(){
  const countries=[...new Set(allRegions.map(r=>r.country))];
  document.getElementById('region-country-list').innerHTML=
-   `<button class="region-country-button ${activeCountry===''?'active':''}" data-country="">Tous les pays</button>`+
-   countries.map(c=>`<button class="region-country-button ${activeCountry===c?'active':''}" data-country="${esc(c)}">${esc(c)}</button>`).join('');
+  `<button class="region-country-button ${activeCountry===''?'active':''}" data-country="">Tous les pays</button>`+
+  countries.map(c=>`<button class="region-country-button ${activeCountry===c?'active':''}" data-country="${esc(c)}">${esc(c)}</button>`).join('');
  document.querySelectorAll('.region-country-button').forEach(b=>b.onclick=()=>{activeCountry=b.dataset.country;renderCountries();renderRegionResults()});
 }
 function renderRegionResults(){
  const q=(document.getElementById('region-search').value||'').trim().toLowerCase();
- const filtered=allRegions.filter(r=>(!activeCountry||r.country===activeCountry)&&(!q||`${r.name} ${r.country} ${r.code}`.toLowerCase().includes(q))).slice(0,700);
+ const filtered=allRegions.filter(r=>(!activeCountry||r.country===activeCountry)&&(!q||`${r.name} ${r.country} ${r.code}`.toLowerCase().includes(q))).slice(0,650);
  document.getElementById('region-results').innerHTML=filtered.length?filtered.map(r=>`
- <label class="region-row">
-   <input type="checkbox" value="${esc(r.id)}" ${selectedRegionIds.has(r.id)?'checked':''}>
-   <span class="region-row-main"><strong>${esc(r.name)}</strong><small>${esc(r.country)} • ${esc(r.type)}</small></span>
-   ${r.code?`<span class="region-badge">${esc(r.code)}</span>`:''}
- </label>`).join(''):'<div class="empty">Aucune subdivision trouvée.</div>';
- document.querySelectorAll('#region-results input[type=checkbox]').forEach(ch=>ch.onchange=()=>{
-   ch.checked?selectedRegionIds.add(ch.value):selectedRegionIds.delete(ch.value);
-   updateSelectedCount();
- });
+ <label class="region-row"><input type="checkbox" value="${esc(r.id)}" ${selectedRegionIds.has(r.id)?'checked':''}>
+ <span class="region-row-main"><strong>${esc(r.name)}</strong><small>${esc(r.country)} • ${esc(r.type)}</small></span>
+ ${r.code?`<span class="region-badge">${esc(r.code)}</span>`:''}</label>`).join(''):'<div class="empty">Aucun territoire trouvé.</div>';
+ document.querySelectorAll('#region-results input[type=checkbox]').forEach(ch=>ch.onchange=()=>{ch.checked?selectedRegionIds.add(ch.value):selectedRegionIds.delete(ch.value);updateSelectedCount()});
  updateSelectedCount();
 }
-function updateSelectedCount(){
- const n=selectedRegionIds.size;
- document.getElementById('selected-region-count').textContent=`${n} sélection${n>1?'s':''}`;
-}
+function updateSelectedCount(){const n=selectedRegionIds.size;document.getElementById('selected-region-count').textContent=`${n} sélection${n>1?'s':''}`}
 document.getElementById('region-search').addEventListener('input',renderRegionResults);
 
 function clearTerritory(){
