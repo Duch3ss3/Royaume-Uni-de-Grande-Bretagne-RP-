@@ -1,14 +1,12 @@
-# Royaume-Uni RP — Version 2.1
-Fichiers entièrement à plat pour GitHub Pages.
+# Royaume-Uni RP — Gouvernement administrable
 
-Pages conservées :
-- Accueil
-- Gouvernement
-- Journal officiel
-- Diplomatie
-- Économie
-- Administration
+Tous les fichiers sont à la racine pour faciliter l'envoi sur GitHub.
 
-Les anciennes pages Actualités, Institutions et Archives ne sont plus utilisées.
+Dans Administration > Gouvernement, vous pouvez :
+- ajouter le Roi ;
+- ajouter la Première ministre ;
+- ajouter plusieurs ministres ;
+- modifier ou supprimer un profil ;
+- utiliser une adresse d'image ou importer une petite image.
 
-Important : l'administration actuelle utilise localStorage. Les changements sont visibles dans le même navigateur uniquement. Exportez régulièrement les données en JSON. Une connexion à GitHub/Decap CMS sera nécessaire pour rendre automatiquement les changements publics pour tous les visiteurs.
+Attention : les données sont enregistrées dans le navigateur utilisé. Elles ne deviennent pas encore publiques pour les autres visiteurs. Utilisez l'export JSON pour sauvegarder. Une connexion à GitHub ou à un CMS sera nécessaire pour la publication publique automatique.

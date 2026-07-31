@@ -1,4 +1,3 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 60 36">
-<clipPath id="s"><path d="M0,0 v36 h60 v-36 z"/></clipPath>
-<clipPath id="t"><path d="M30,18 h30 v18 z v18 h-30 z h-30 v-18 z v-18 h30 z"/></clipPath>
+<clipPath id="s"><path d="M0,0 v36 h60 v-36 z"/></clipPath><clipPath id="t"><path d="M30,18 h30 v18 z v18 h-30 z h-30 v-18 z v-18 h30 z"/></clipPath>
 <g clip-path="url(#s)"><path d="M0,0 v36 h60 v-36 z" fill="#012169"/><path d="M0,0 L60,36 M60,0 L0,36" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,36 M60,0 L0,36" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v36 M0,18 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v36 M0,18 h60" stroke="#C8102E" stroke-width="6"/></g></svg>
