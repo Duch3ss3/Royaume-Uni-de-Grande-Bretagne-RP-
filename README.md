@@ -1,15 +1,28 @@
-# Portail du Gouvernement du Royaume-Uni — version royale
+# Portail du Gouvernement du Royaume-Uni — Version 2.0
 
-Téléversez tous les fichiers à la racine de votre dépôt GitHub Pages.
+Cette version contient la refonte complète du design et de l’architecture publique du site.
 
-## Nouveautés
-- identité britannique classique et royale ;
-- drapeau du Royaume-Uni comme logo ;
-- articles supprimés ;
-- espace Administration ;
-- carte mondiale de subdivisions administratives niveau 1 ;
-- statuts diplomatiques, recherche et fiches territoriales ;
-- export/import JSON.
+## Inclus
+- Nouveau design britannique royal et institutionnel
+- Drapeau du Royaume-Uni comme logo
+- Nouvelle page d’accueil
+- Pages Actualités, Gouvernement, Institutions, Diplomatie, Journal officiel et Archives
+- Navigation responsive mobile
+- Architecture organisée en dossiers
 
-## Important
-La version actuelle de l’administration enregistre les données dans le navigateur (localStorage). Elles sont visibles sur le même appareil et le même navigateur. Pour publier les changements à tous les visiteurs, il faudra ensuite connecter le panneau à un véritable stockage en ligne ou à un CMS GitHub.
+## Installation GitHub Pages
+1. Décompresser le ZIP.
+2. Téléverser le contenu du dossier à la racine du dépôt GitHub.
+3. Valider avec **Commit changes**.
+4. Attendre le déploiement GitHub Pages puis actualiser avec Ctrl + Maj + R.
+
+## Versions suivantes
+- 2.1 : administration et création de contenu
+- 2.2 : carte interactive
+- 2.3 : diplomatie avancée
+- 2.4 : gouvernement détaillé
+- 3.0 : statistiques, chronologie, archives et recherche avancée
+
+
+## Version plate
+Tous les fichiers sont placés à la racine du dépôt GitHub.
