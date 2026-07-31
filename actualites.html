@@ -1,2 +1,85 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Portail gouvernemental du Royaume-Uni en 2308"><title>Actualités · Gouvernement du Royaume-Uni</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="responsive.css"></head><body><div class="utility"><div>PORTAIL OFFICIEL · ANNÉE 2308</div><div><span>English</span><span>Accessibilité</span><span>Recherche</span></div></div>
-<header class="site-header"><a href="index.html" class="brand"><img src="union-jack.svg" alt="Drapeau du Royaume-Uni"><div><strong>Gouvernement du Royaume-Uni</strong><small>Royaume-Uni de Grande-Bretagne</small></div></a><button class="menu-button" aria-label="Ouvrir le menu">Menu</button><nav><a class="" href="index.html">Accueil</a><a class="active" href="actualites.html">Actualités</a><a class="" href="gouvernement.html">Gouvernement</a><a class="" href="institutions.html">Institutions</a><a class="" href="diplomatie.html">Diplomatie</a><a class="" href="journal-officiel.html">Journal officiel</a><a class="" href="archives.html">Archives</a></nav></header><main><section class="page-hero"><p class="eyebrow">10 DOWNING STREET</p><h1>Actualités du Gouvernement</h1><p>Communiqués, discours, décisions et informations publiques des institutions britanniques.</p></section><section class="filter-bar"><label>Rechercher<input id="news-search" type="search" placeholder="Titre ou mot-clé"></label><label>Catégorie<select id="news-category"><option value="all">Toutes</option><option>Communiqué</option><option>Discours</option><option>Diplomatie</option><option>Économie</option><option>Défense</option></select></label></section><section id="news-list" class="news-list"></section></main><footer><div class="footer-grid"><div><img src="union-jack.svg" alt=""><h3>Gouvernement du Royaume-Uni</h3><p>Portail officiel fictif d’un jeu de rôle géopolitique situé en 2308.</p></div><div><h4>Institutions</h4><a href="gouvernement.html">Le Gouvernement</a><a href="institutions.html">La Couronne et le Parlement</a><a href="journal-officiel.html">Journal officiel</a></div><div><h4>Relations extérieures</h4><a href="diplomatie.html">Diplomatie</a><a href="archives.html">Archives</a><a href="actualites.html">Communiqués</a></div></div><div class="footer-bottom">© 2308 · Gouvernement du Royaume-Uni · Site RP non officiel</div></footer><script src="news-data.js"></script><script src="official-data.js"></script><script src="main.js"></script></body></html>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Actualités officielles du Royaume-Uni de Grande-Bretagne en 2308">
+  <title>Actualités · Royaume-Uni de Grande-Bretagne</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+  <header class="site-header news-site-header">
+    <a href="index.html" class="brand">
+      <img src="union-jack.svg" alt="Drapeau du Royaume-Uni">
+      <div><strong>Royaume-Uni de Grande-Bretagne</strong></div>
+    </a>
+    <button class="menu-button" aria-label="Ouvrir le menu">Menu</button>
+    <nav aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a class="active" href="actualites.html">Actualités</a>
+      <a href="gouvernement.html">Gouvernement</a>
+      <a href="institutions.html">Institutions</a>
+      <a href="diplomatie.html">Diplomatie</a>
+      <a href="journal-officiel.html">Journal officiel</a>
+      <a href="archives.html">Archives</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="news-heading">
+      <div>
+        <p class="eyebrow">COMMUNIQUÉS OFFICIELS</p>
+        <h1>Actualités du Royaume</h1>
+        <p>Décisions, accords, discours et informations publiés par le Gouvernement de Sa Majesté.</p>
+      </div>
+    </section>
+
+    <section id="featured-news" class="featured-news" aria-label="Actualité à la une"></section>
+
+    <section class="news-explorer">
+      <div class="news-explorer-head">
+        <div>
+          <p class="eyebrow">PUBLICATIONS</p>
+          <h2>Toutes les actualités</h2>
+        </div>
+        <div class="news-count" id="news-count" aria-live="polite"></div>
+      </div>
+
+      <div class="news-tools">
+        <label class="search-field">
+          <span>Rechercher une publication</span>
+          <input id="news-search" type="search" placeholder="Titre, sujet ou mot-clé">
+        </label>
+        <label class="category-field">
+          <span>Catégorie</span>
+          <select id="news-category">
+            <option value="all">Toutes les catégories</option>
+            <option>Communiqué</option>
+            <option>Diplomatie</option>
+            <option>Économie</option>
+            <option>Discours</option>
+            <option>Défense</option>
+            <option>Législation</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="news-list" class="news-catalogue"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div><img src="union-jack.svg" alt=""><h3>Royaume-Uni de Grande-Bretagne</h3><p>Portail institutionnel du Royaume, année 2308.</p></div>
+      <div><h4>Institutions</h4><a href="gouvernement.html">Le Gouvernement</a><a href="institutions.html">La Couronne et le Parlement</a><a href="journal-officiel.html">Journal officiel</a></div>
+      <div><h4>Informations</h4><a href="diplomatie.html">Diplomatie</a><a href="archives.html">Archives</a><a href="actualites.html">Communiqués</a></div>
+    </div>
+    <div class="footer-bottom">© 2308 · Royaume-Uni de Grande-Bretagne · Site RP</div>
+  </footer>
+
+  <script src="news-data.js"></script>
+  <script src="main.js"></script>
+  <script src="actualites.js"></script>
+</body>
+</html>
