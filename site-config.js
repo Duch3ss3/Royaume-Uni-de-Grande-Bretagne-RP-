@@ -1,0 +1,1 @@
+window.SITE_CONFIG={name:"Gouvernement du Royaume-Uni",year:2308,version:"2.0"};
