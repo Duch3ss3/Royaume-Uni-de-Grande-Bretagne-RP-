@@ -1,20 +1,14 @@
-# Royaume-Uni RP — Version 2.5 MapLibre
+# Royaume-Uni RP — Version 2.6 Carte Résurgence
 
-La carte utilise désormais MapLibre GL JS.
+Cette version intègre le fichier `regions.geojson` fourni par le propriétaire du projet.
 
 Fonctionnalités :
-- rendu WebGL fluide ;
-- frontières nettes pendant le zoom ;
-- survol des territoires ;
-- recherche ;
-- panneau diplomatique ;
-- carte hybride : grands États subdivisés, petits pays entiers ;
-- base unique utilisée par la carte, la diplomatie et l'économie.
+- MapLibre GL JS ;
+- 1 217 régions issues de Projet Résurgence ;
+- mêmes frontières régionales et même aspect quadrillé ;
+- recherche par région, pays ou fiche RP ;
+- regroupement de plusieurs régions dans une fiche ;
+- synchronisation Carte / Diplomatie / Économie ;
+- modification depuis Administration > Territoires.
 
-Sources externes :
-- MapLibre GL JS 5.24.0 ;
-- fond raster CARTO/OpenStreetMap ;
-- frontières Natural Earth via des services ArcGIS publics.
-
-Une connexion Internet est nécessaire pour la carte.
-Les données administratives sont encore enregistrées localement dans le navigateur.
+Les données du panneau sont encore stockées localement dans le navigateur. Une connexion GitHub/CMS sera nécessaire pour publier les changements pour tous les visiteurs.
