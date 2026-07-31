@@ -34,16 +34,7 @@
   <div><label>Nom affiché</label><input id="territory-name" placeholder="Ex. Royaume-Uni de Grande-Bretagne"></div>
   <div><label>Drapeau</label><input id="territory-flag" placeholder="Emoji 🇬🇧 ou adresse d’image"></div>
   <div><label>Propriétaire ou gouvernement</label><input id="territory-owner"></div>
-  <div><label>Statut cartographique</label>
-    <select id="territory-status">
-      <option value="national">Territoire national</option>
-      <option value="allie">Allié</option>
-      <option value="neutre">Neutre</option>
-      <option value="revendique">Revendiqué</option>
-      <option value="hostile">Hostile</option>
-    </select>
-  </div>
-  <div><label>Relation</label>
+  <div><label>Relation diplomatique</label>
     <select id="territory-relation">
       <option>Excellente</option><option>Allié</option><option>Normale</option><option>Tendue</option><option>Hostile</option>
     </select>
@@ -51,6 +42,21 @@
   <div><label>Couleur personnalisée</label><input id="territory-color" type="color" value="#315f94"></div>
   <div><label>Taxe d’importation (%)</label><input id="territory-import" type="number" min="0" step="0.1"></div>
   <div><label>Taxe d’exportation (%)</label><input id="territory-export" type="number" min="0" step="0.1"></div>
+</div>
+
+<section class="map-category-admin">
+  <h3>Affichage dans les filtres de la carte</h3>
+  <p class="small">La carte reste grise par défaut. Coche les catégories dans lesquelles cette fiche doit apparaître.</p>
+  <div class="category-check-grid">
+    <label class="category-check national-check"><input id="territory-my-country" type="checkbox"><span><strong>Mon pays</strong><small>Affiché en bleu dans le filtre national.</small></span></label>
+    <label class="category-check claim-check"><input id="territory-claim" type="checkbox"><span><strong>Revendication</strong><small>Affichée en doré avec ton pays.</small></span></label>
+    <label class="category-check economy-check"><input id="territory-economy" type="checkbox"><span><strong>Base Économie</strong><small>Ajoute cette fiche à la page Économie.</small></span></label>
+    <label class="category-check ally-check"><input id="territory-ally" type="checkbox"><span><strong>Allié</strong><small>Affiché avec le filtre Alliés.</small></span></label>
+    <label class="category-check trade-check"><input id="territory-commerce" type="checkbox"><span><strong>Commerce</strong><small>Affiché avec le filtre Commerce.</small></span></label>
+  </div>
+</section>
+
+<div class="form-grid">
 </div>
 
 <section class="region-picker">

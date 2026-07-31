@@ -62,15 +62,15 @@ document.getElementById('region-search').addEventListener('input',renderRegionRe
 
 function clearTerritory(){
  ['territory-index','territory-name','territory-flag','territory-owner','territory-import','territory-export','territory-treaties','territory-organizations','territory-claims','territory-notes'].forEach(id=>document.getElementById(id).value='');
- document.getElementById('territory-status').value='neutre';
  document.getElementById('territory-relation').value='Normale';
- document.getElementById('territory-color').value='#6e7681';
+ document.getElementById('territory-color').value='#315f94';
+ ['territory-my-country','territory-claim','territory-economy','territory-ally','territory-commerce'].forEach(id=>document.getElementById(id).checked=false);
  selectedRegionIds.clear();activeCountry='';renderCountries();renderRegionResults();
 }
 function renderAdminTerritories(){
  const el=document.getElementById('admin-territory-list');const items=getData().territories||[];
  el.innerHTML=items.length?items.map((t,i)=>`<div class="article-item">
-   <p class="kicker">${esc(t.status)} • ${(t.regionIds||[]).length} subdivision(s)</p>
+   <p class="kicker">${[t.myCountry?'Mon pays':'',t.claim?'Revendication':'',t.ally?'Allié':'',t.commerce?'Commerce':''].filter(Boolean).join(' • ')||'Carte vierge'} • ${(t.regionIds||[]).length} subdivision(s)</p>
    <h3>${flagHTML(t.flag,t.name)}${esc(t.name)}</h3>
    <p>${esc(t.relation)} • Import ${Number(t.importTax||0)} % • Export ${Number(t.exportTax||0)} %</p>
    <div class="actions"><button class="btn secondary edit-territory" data-i="${i}">Modifier</button><button class="btn secondary delete-territory" data-i="${i}">Supprimer</button></div>
@@ -84,9 +84,13 @@ function renderAdminTerritories(){
    document.getElementById('territory-name').value=t.name||'';
    document.getElementById('territory-flag').value=t.flag||'';
    document.getElementById('territory-owner').value=t.owner||'';
-   document.getElementById('territory-status').value=t.status||'neutre';
    document.getElementById('territory-relation').value=t.relation||'Normale';
-   document.getElementById('territory-color').value=t.color||'#6e7681';
+   document.getElementById('territory-color').value=t.color||'#315f94';
+   document.getElementById('territory-my-country').checked=Boolean(t.myCountry);
+   document.getElementById('territory-claim').checked=Boolean(t.claim);
+   document.getElementById('territory-economy').checked=Boolean(t.economyEnabled);
+   document.getElementById('territory-ally').checked=Boolean(t.ally);
+   document.getElementById('territory-commerce').checked=Boolean(t.commerce);
    document.getElementById('territory-import').value=t.importTax||0;
    document.getElementById('territory-export').value=t.exportTax||0;
    document.getElementById('territory-treaties').value=(t.treaties||[]).join('\n');
@@ -113,9 +117,13 @@ document.getElementById('save-territory').onclick=()=>{
    id:idx===''?`territory-${Date.now()}`:(d.territories[+idx].id||`territory-${Date.now()}`),
    name,flag:document.getElementById('territory-flag').value.trim(),
    owner:document.getElementById('territory-owner').value.trim(),
-   status:document.getElementById('territory-status').value,
    relation:document.getElementById('territory-relation').value,
    color:document.getElementById('territory-color').value,
+   myCountry:document.getElementById('territory-my-country').checked,
+   claim:document.getElementById('territory-claim').checked,
+   economyEnabled:document.getElementById('territory-economy').checked||document.getElementById('territory-ally').checked||document.getElementById('territory-commerce').checked,
+   ally:document.getElementById('territory-ally').checked,
+   commerce:document.getElementById('territory-commerce').checked,
    importTax:+document.getElementById('territory-import').value||0,
    exportTax:+document.getElementById('territory-export').value||0,
    regionIds:[...selectedRegionIds],

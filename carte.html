@@ -19,15 +19,27 @@
   <p class="kicker">Centre de situation diplomatique</p>
   <h1>Carte territoriale mondiale</h1>
   <div class="gold-rule"></div>
-  <p>Cette carte utilise directement les frontières régionales fournies par Projet Résurgence, affichées avec MapLibre GL JS.</p>
+  <p>La carte est volontairement vierge : tous les territoires restent gris jusqu’à l’activation d’un filtre configuré depuis l’administration.</p>
 </section>
 
-<div class="legend">
-  <span><i class="dot national"></i>Territoire national</span>
+<div class="map-filter-bar" aria-label="Filtres de la carte">
+  <button class="map-filter-btn filter-national" data-filter="national" aria-pressed="false">
+    <span class="filter-swatch"></span>Mon pays et mes revendications
+  </button>
+  <button class="map-filter-btn filter-allies" data-filter="allies" aria-pressed="false">
+    <span class="filter-swatch"></span>Alliés
+  </button>
+  <button class="map-filter-btn filter-commerce" data-filter="commerce" aria-pressed="false">
+    <span class="filter-swatch"></span>Commerce
+  </button>
+  <button class="map-filter-reset" id="map-filter-reset">Carte vierge</button>
+</div>
+<div class="legend map-legend">
+  <span><i class="dot map-grey"></i>Non affiché</span>
+  <span><i class="dot national"></i>Mon pays</span>
+  <span><i class="dot revendique"></i>Revendication</span>
   <span><i class="dot allie"></i>Allié</span>
-  <span><i class="dot neutre"></i>Neutre</span>
-  <span><i class="dot revendique"></i>Revendiqué</span>
-  <span><i class="dot hostile"></i>Hostile</span>
+  <span><i class="dot commerce"></i>Commerce</span>
 </div>
 
 <section class="map-shell">
@@ -38,7 +50,7 @@
       <button id="map-reset">Vue mondiale</button>
     </div>
     <div id="maplibre-map" aria-label="Carte territoriale mondiale interactive"></div>
-    <div id="map-status" class="map-status">Chargement de la carte hybride…</div>
+    <div id="map-status" class="map-status">Chargement de la carte vierge…</div>
   </div>
   <aside id="map-info" class="map-panel">
     <p class="kicker">Fiche territoriale</p>
