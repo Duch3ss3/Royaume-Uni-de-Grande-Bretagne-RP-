@@ -1,4 +1,4 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Carte — Royaume-Uni</title><link rel="stylesheet" href="style.css"></head><body>
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Carte — Royaume-Uni</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"></head><body>
 <header class="site-header">
   <div class="brandbar">
     <img class="flag" src="union-jack.svg" alt="Drapeau du Royaume-Uni">
@@ -15,21 +15,40 @@
   </div></nav>
 </header>
 <main>
-<section class="hero"><p class="kicker">Centre de situation diplomatique</p><h1>Carte mondiale</h1><div class="gold-rule"></div><p>Sélectionnez un pays afin d’afficher sa fiche diplomatique et commerciale. La population et le PIB ne sont pas utilisés.</p></section>
+<section class="hero">
+  <p class="kicker">Centre de situation diplomatique</p>
+  <h1>Carte territoriale mondiale</h1>
+  <div class="gold-rule"></div>
+  <p>La carte affiche les subdivisions administratives de premier niveau : États, provinces, régions, Länder, oblasts et autres territoires comparables.</p>
+</section>
+
 <div class="legend">
-<span><i class="dot national"></i>Territoire national</span><span><i class="dot allie"></i>Allié</span><span><i class="dot neutre"></i>Neutre</span><span><i class="dot revendique"></i>Revendiqué</span><span><i class="dot hostile"></i>Hostile</span>
+  <span><i class="dot national"></i>Territoire national</span>
+  <span><i class="dot allie"></i>Allié</span>
+  <span><i class="dot neutre"></i>Neutre</span>
+  <span><i class="dot revendique"></i>Revendiqué</span>
+  <span><i class="dot hostile"></i>Hostile</span>
 </div>
+
 <section class="map-shell">
-<div class="map-area">
-<div class="map-tools"><input id="map-search" placeholder="Rechercher un pays ou territoire"><button id="map-search-btn">Rechercher</button><button id="map-reset">Vue mondiale</button></div>
-<svg id="world-map" role="img" aria-label="Carte politique mondiale interactive"></svg>
-<div id="map-status" class="map-status">Chargement de la carte…</div>
-</div>
-<aside id="map-info" class="map-panel"><p class="kicker">Fiche territoriale</p><h2>Sélectionnez un territoire</h2><p>Les informations diplomatiques et commerciales apparaîtront ici.</p></aside>
+  <div class="map-area">
+    <div class="map-tools">
+      <input id="map-search" placeholder="Rechercher une région, une province ou un pays">
+      <button id="map-search-btn">Rechercher</button>
+      <button id="map-reset">Vue mondiale</button>
+    </div>
+    <div id="leaflet-map" aria-label="Carte territoriale mondiale interactive"></div>
+    <div id="map-status" class="map-status">Chargement des subdivisions administratives…</div>
+  </div>
+  <aside id="map-info" class="map-panel">
+    <p class="kicker">Fiche territoriale</p>
+    <h2>Sélectionnez une subdivision</h2>
+    <p>Les informations diplomatiques et commerciales apparaîtront ici.</p>
+  </aside>
 </section>
 </main>
 <footer class="site-footer"><div class="footer-inner">
 <div><strong>Royaume-Uni de Grande-Bretagne</strong><p>Site fictif destiné à un jeu de rôle géopolitique.</p></div>
 <div><p>Gouvernement de Sa Majesté • 2308</p></div>
 </div></footer><script src="main.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script><script src="data.js"></script><script src="map.js"></script></body></html>
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script><script src="data.js"></script><script src="map.js"></script></body></html>

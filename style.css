@@ -126,3 +126,36 @@ textarea{min-height:110px}
  .admin-person{grid-template-columns:70px 1fr}
  .admin-person .actions{grid-column:1/-1}
 }
+
+
+/* Carte détaillée Admin-1 */
+#leaflet-map{width:100%;height:700px;background:#07111f}
+.leaflet-container{font-family:Georgia,"Times New Roman",serif}
+.leaflet-control-zoom a{background:var(--navy)!important;color:#fff!important;border-color:var(--gold)!important}
+.leaflet-tooltip.region-tooltip{background:#081426;color:#fff;border:1px solid #b6903f;border-radius:0;box-shadow:none;padding:7px 10px}
+.leaflet-tooltip-top.region-tooltip:before{border-top-color:#b6903f}
+.map-shell{min-height:700px}
+.map-area{min-height:700px}
+.map-panel{max-height:700px;overflow-y:auto}
+.map-tools{z-index:1000}
+.region-picker{margin:28px 0;border:1px solid var(--line);background:#f8f4eb;padding:18px}
+.region-picker-head{display:flex;justify-content:space-between;gap:18px;align-items:center;margin-bottom:14px}
+.region-picker-head h3{margin:0 0 4px}
+#region-search{margin-bottom:14px}
+.region-columns{display:grid;grid-template-columns:220px 1fr;gap:14px;min-height:420px}
+.region-country-list,.region-results{background:white;border:1px solid var(--line);max-height:520px;overflow:auto}
+.region-country-button{display:block;width:100%;padding:10px 12px;text-align:left;border:0;border-bottom:1px solid #eee;background:white;cursor:pointer}
+.region-country-button:hover,.region-country-button.active{background:var(--navy);color:white}
+.region-row{display:flex;align-items:center;gap:10px;padding:10px 12px;border-bottom:1px solid #eee;cursor:pointer}
+.region-row:hover{background:#f7f0df}
+.region-row input{width:auto}
+.region-row-main{flex:1}
+.region-row-main strong{display:block;color:var(--navy)}
+.region-row-main small{color:var(--muted)}
+.region-badge{font-size:.75rem;color:var(--gold);border:1px solid var(--line);padding:3px 6px}
+@media(max-width:800px){
+  .region-columns{grid-template-columns:1fr}
+  .region-country-list{max-height:220px}
+  #leaflet-map{height:580px}
+  .map-shell,.map-area{min-height:580px}
+}

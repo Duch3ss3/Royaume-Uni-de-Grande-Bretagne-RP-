@@ -1,12 +1,16 @@
-# Royaume-Uni RP — Version 2.2 Carte et territoires
+# Royaume-Uni RP — Version 2.3 Carte détaillée Admin-1
 
-Tous les fichiers sont à la racine.
+Cette version affiche des subdivisions administratives mondiales de premier niveau :
+États, provinces, régions, Länder, oblasts, communautés autonomes, etc.
 
-Une seule fiche territoire alimente :
+Une fiche territoriale peut regrouper plusieurs subdivisions. La même fiche alimente :
 - la carte ;
 - la page Diplomatie ;
 - la page Économie.
 
-La carte utilise World Atlas pour les frontières nationales. Cette première version ne contient pas encore toutes les subdivisions administratives de Projet Résurgence.
+La carte charge les géométries publiques Natural Earth depuis un service ArcGIS et utilise
+un fond cartographique CARTO/OpenStreetMap. Une connexion Internet est nécessaire.
 
-L'administration utilise le stockage local du navigateur. Exportez régulièrement vos données. Pour rendre les changements publics à tous les visiteurs, il faudra ensuite connecter le panneau à GitHub ou à un CMS.
+Important : l'administration stocke encore les données dans le navigateur local.
+Exportez régulièrement vos données JSON. Une connexion GitHub/CMS sera nécessaire pour
+que les modifications deviennent publiques pour tous les visiteurs.

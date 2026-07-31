@@ -12,4 +12,8 @@ function personImage(person,cls){
  return `<div class="${cls} placeholder-photo">♛</div>`;
 }
 function lines(value){return String(value||'').split(/\n+/).map(x=>x.trim()).filter(Boolean)}
-function territoryByAtlas(id){return (getData().territories||[]).find(t=>String(t.atlasId)===String(id))}
+function territoryByRegionId(id){
+ return (getData().territories||[]).find(t=>(t.regionIds||[]).map(String).includes(String(id)));
+}
+function territoryByAtlas(id){return territoryByRegionId(id)}
+

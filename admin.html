@@ -26,24 +26,61 @@
 </aside>
 <section>
 <div class="admin-panel tab" id="tab-territories">
-<h2>Ajouter ou modifier une fiche territoire</h2>
+<h2>Créer ou modifier une fiche territoriale</h2>
+<p class="small">Une fiche peut regrouper plusieurs régions. Par exemple, un même pays RP peut contrôler plusieurs provinces ou États.</p>
 <input type="hidden" id="territory-index">
+
 <div class="form-grid">
-<div><label>Pays de la carte</label><select id="territory-atlas-id" class="territory-select"><option value="">Chargement des pays…</option></select></div>
-<div><label>Nom affiché</label><input id="territory-name"></div>
-<div><label>Drapeau</label><input id="territory-flag" placeholder="Emoji 🇫🇷 ou adresse d’image"></div>
-<div><label>Propriétaire ou gouvernement</label><input id="territory-owner"></div>
-<div><label>Statut cartographique</label><select id="territory-status"><option value="national">Territoire national</option><option value="allie">Allié</option><option value="neutre">Neutre</option><option value="revendique">Revendiqué</option><option value="hostile">Hostile</option></select></div>
-<div><label>Relation</label><select id="territory-relation"><option>Excellente</option><option>Allié</option><option>Normale</option><option>Tendue</option><option>Hostile</option></select></div>
-<div><label>Taxe d’importation (%)</label><input id="territory-import" type="number" min="0" step="0.1"></div>
-<div><label>Taxe d’exportation (%)</label><input id="territory-export" type="number" min="0" step="0.1"></div>
-<div style="grid-column:1/-1"><label>Traités et accords</label><textarea id="territory-treaties" placeholder="Un traité par ligne"></textarea></div>
-<div style="grid-column:1/-1"><label>Organisations internationales</label><textarea id="territory-organizations" placeholder="Une organisation par ligne"></textarea></div>
-<div style="grid-column:1/-1"><label>Revendications</label><textarea id="territory-claims"></textarea></div>
-<div style="grid-column:1/-1"><label>Notes RP</label><textarea id="territory-notes"></textarea></div>
+  <div><label>Nom affiché</label><input id="territory-name" placeholder="Ex. Royaume-Uni de Grande-Bretagne"></div>
+  <div><label>Drapeau</label><input id="territory-flag" placeholder="Emoji 🇬🇧 ou adresse d’image"></div>
+  <div><label>Propriétaire ou gouvernement</label><input id="territory-owner"></div>
+  <div><label>Statut cartographique</label>
+    <select id="territory-status">
+      <option value="national">Territoire national</option>
+      <option value="allie">Allié</option>
+      <option value="neutre">Neutre</option>
+      <option value="revendique">Revendiqué</option>
+      <option value="hostile">Hostile</option>
+    </select>
+  </div>
+  <div><label>Relation</label>
+    <select id="territory-relation">
+      <option>Excellente</option><option>Allié</option><option>Normale</option><option>Tendue</option><option>Hostile</option>
+    </select>
+  </div>
+  <div><label>Couleur personnalisée</label><input id="territory-color" type="color" value="#315f94"></div>
+  <div><label>Taxe d’importation (%)</label><input id="territory-import" type="number" min="0" step="0.1"></div>
+  <div><label>Taxe d’exportation (%)</label><input id="territory-export" type="number" min="0" step="0.1"></div>
 </div>
-<div class="actions"><button class="btn" id="save-territory">Enregistrer</button><button class="btn secondary" id="clear-territory">Nouvelle fiche</button></div>
-<h2>Territoires enregistrés</h2><div id="admin-territory-list" class="article-list"></div>
+
+<section class="region-picker">
+  <div class="region-picker-head">
+    <div>
+      <h3>Subdivisions contrôlées</h3>
+      <p class="small">Recherchez puis cochez toutes les régions appartenant à cette fiche.</p>
+    </div>
+    <strong id="selected-region-count">0 sélection</strong>
+  </div>
+  <input id="region-search" placeholder="Rechercher : Angleterre, Écosse, Californie, Québec…">
+  <div class="region-columns">
+    <div id="region-country-list" class="region-country-list"></div>
+    <div id="region-results" class="region-results"><div class="empty">Chargement des régions…</div></div>
+  </div>
+</section>
+
+<div class="form-grid">
+  <div style="grid-column:1/-1"><label>Traités et accords</label><textarea id="territory-treaties" placeholder="Un traité par ligne"></textarea></div>
+  <div style="grid-column:1/-1"><label>Organisations internationales</label><textarea id="territory-organizations" placeholder="Une organisation par ligne"></textarea></div>
+  <div style="grid-column:1/-1"><label>Revendications</label><textarea id="territory-claims"></textarea></div>
+  <div style="grid-column:1/-1"><label>Notes RP</label><textarea id="territory-notes"></textarea></div>
+</div>
+
+<div class="actions">
+  <button class="btn" id="save-territory">Enregistrer</button>
+  <button class="btn secondary" id="clear-territory">Nouvelle fiche</button>
+</div>
+<h2>Fiches territoriales enregistrées</h2>
+<div id="admin-territory-list" class="article-list"></div>
 </div>
 
 <div class="admin-panel tab" id="tab-government" hidden>
@@ -73,4 +110,4 @@
 <div><strong>Royaume-Uni de Grande-Bretagne</strong><p>Site fictif destiné à un jeu de rôle géopolitique.</p></div>
 <div><p>Gouvernement de Sa Majesté • 2308</p></div>
 </div></footer><script src="main.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script><script src="data.js"></script><script src="admin.js"></script></body></html>
+<script src="data.js"></script><script src="admin.js"></script></body></html>
